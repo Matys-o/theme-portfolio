@@ -1,0 +1,1615 @@
+/*
+Theme Name: Theme Portfolio
+Author: Matys Ouvrard
+Description: theme pour developper un portfolio
+Version: 0.1
+Tags: simple, facile, sans danger, base pour la suite
+*/
+
+
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Police principale */
+body {
+    font-family: 'Acumin-pro', sans-serif;
+    font-weight: medium;
+}
+
+/* Styles globaux pour les boutons */
+button,
+.hero-buttons .hero-btn,
+.about-section .btn,
+.contact-buttons a,
+.collaborate-section .collab-btn {
+    font-family: 'Loos-extraWide', sans-serif; /* Utilise Loos ExtraWide pour tous les boutons */
+    font-weight: bold;
+    background-color: #FFC300;
+    color: #000000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet au survol pour tous les boutons */
+button:hover,
+.hero-buttons .hero-btn:hover,
+.about-section .btn:hover,
+.contact-buttons a:hover,
+.collaborate-section .collab-btn:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+
+/* Header Styles */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    color: #FFFFFF;
+        box-shadow: 0px 4px 8px rgba(15, 15, 15, 0.621); /* Ombre sous le header */
+
+}
+
+
+.header-logo img {
+    max-width: 90px; /* Ajuste la taille du logo si nécessaire */
+}
+
+.main-navigation {
+    
+    font-family: 'Loos-extraWide', sans-serif;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu {
+
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500; /* Ajuste l'épaisseur selon ton design */
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #FFC300; /* Couleur de survol */
+}
+
+/* Menu Icon (Hamburger) */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 2px;
+    background-color: #FFFFFF;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background-image: url('assets/images/presentation.png'); /* Remplace par le chemin réel de ton image */
+    background-size: cover;
+    background-position: center bottom;
+    padding: 100px 20px;
+    text-align: center;
+    color: #FFFFFF;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Overlay sombre */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-family: 'Loos-extrawide', sans-serif;
+    font-size: 6rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-family: 'Loos-extended', sans-serif;
+    color: #FFC300;
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.hero-buttons .hero-btn {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #FFC300;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero-buttons .hero-btn:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+/* Image Sections with Overlay Text */
+.section-overlay {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+.section-overlay div {
+    position: relative;
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.section-overlay div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.section-overlay-text {
+    font-family: 'Loos-extrawide', sans-serif;
+    color: #FFC300;
+    font-size: 1.8rem;
+    font-weight: medium;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+/* Art of Surpassing Section */
+.art-surpass-section {
+    position: relative;
+    background-image: url('assets/images/surpass.png');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: #FFFFFF;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+}
+
+.art-surpass-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.art-surpass-content {
+    position: relative;
+    z-index: 2;
+}
+
+.art-surpass-content h2,
+.art-surpass-content h1 {
+    font-family: 'Loos-extrawide', sans-serif;
+}
+
+.art-surpass-content h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+}
+
+.art-surpass-content h1 {
+    font-size: 6rem;
+    font-weight: medium;
+}
+
+/* About Section */
+.about-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #000000;
+}
+
+.about-section h2 {
+    font-family: 'Loos-extrawide', sans-serif;
+    color: #FFC300;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-section .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #FFC300;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.about-section .btn:hover {
+    background-color: #FFFFFF;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #000000;
+}
+
+.contact-section h2 {
+    font-family: 'Loos-extrawide', sans-serif;
+    color: #FFC300;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFC300;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.contact-buttons a:hover {
+    background-color: #FFFFFF;
+}
+
+/* Skills Section */
+.skills-section {
+    background-color: #FFD000;
+    padding: 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.skills-marquee {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.skills-wrapper {
+    display: inline-flex;
+    gap: 15px;
+    animation: scroll-left 50s linear infinite;
+}
+
+.skills-wrapper span {
+    font-family: 'forma-djr-banner', sans-serif;
+    color: #000000;
+    padding: 8px 15px;
+    font-weight: bold;
+    white-space: nowrap;
+    position: relative;
+}
+
+.skills-wrapper span:not(:last-child)::after {
+    content: "•";
+    color: #000000;
+    margin-left: 15px;
+    font-size: 1.2rem;
+}
+
+/* Keyframes for infinite scroll animation */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Collaboration Section */
+.collaborate-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #000000;
+}
+
+.collaborate-section h2 {
+    font-family: 'Loos-extended', sans-serif;
+    font-size: 3rem;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.collaborate-section .collab-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #FFC300;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.collaborate-section .collab-btn:hover {
+    background-color: #FFFFFF;
+}
+
+/* Footer */
+footer {
+    background-color: #111111;
+    padding: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.footer-content .social-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-content .social-links a:hover {
+    color: #FFC300;
+}
+
+
+/* Petits écrans (téléphones) */
+@media (max-width: 768px) {
+    /* Header */
+    .site-header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .header-logo img {
+        max-width: 70px;
+        margin-bottom: 10px;
+    }
+
+    .main-navigation {
+        display: none; /* Masque le menu pour petits écrans */
+    }
+
+    /* Icône Hamburger */
+    .menu-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 80px 20px;
+        height: 70vh;
+    }
+
+    .hero-title {
+        font-size: 2,5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-buttons .hero-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Sections avec texte et images */
+    .section-overlay div {
+        height: 200px;
+    }
+
+    .section-overlay-text {
+        font-size: 0,5rem;
+    }
+
+    /* Art of Surpassing Section */
+    .art-surpass-content h2 {
+        font-size: 0,7rem;
+    }
+
+    .art-surpass-content h1 {
+        font-size: 0,8rem;
+    }
+
+    /* About, Contact, Collaboration Sections */
+    .about-section h2,
+    .contact-section h2,
+    .collaborate-section h2 {
+        font-size: 2rem;
+    }
+
+    .about-section p,
+    .contact-section p {
+        font-size: 1rem;
+    }
+
+    /* Skills Marquee */
+    .skills-wrapper {
+        gap: 10px;
+    }
+}
+
+/* Tablettes (écrans moyens) */
+@media (max-width: 1024px) {
+    /* Header */
+    .nav-menu {
+        gap: 15px;
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    /* Sections avec texte et images */
+    .section-overlay div {
+        height: 250px;
+    }
+
+    .section-overlay-text {
+        font-size: 1.5rem;
+    }
+
+    /* Art of Surpassing Section */
+    .art-surpass-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .art-surpass-content h1 {
+        font-size: 5rem;
+    }
+
+    /* About, Contact, Collaboration Sections */
+    .about-section h2,
+    .contact-section h2,
+    .collaborate-section h2 {
+        font-size: 2.3rem;
+    }
+
+    .about-section p,
+    .contact-section p {
+        font-size: 1.1rem;
+    }
+
+    /* Skills Marquee */
+    .skills-wrapper {
+        gap: 12px;
+    }
+}
+
+/* Très petits écrans (moins de 480px) */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-buttons .hero-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .about-section h2,
+    .contact-section h2,
+    .collaborate-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-section p,
+    .contact-section p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Styles pour la page Galerie */
+.galerie-page {
+    background-color: #0D0D0D; /* Couleur de fond générale */
+    color: #FFFFFF;
+    padding: 40px 20px;
+    font-family: 'Loos-extrawide', sans-serif;
+}
+
+/* Titre Principal */
+.galerie-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.galerie-title h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.galerie-title .highlight {
+    color: #FFC300;
+}
+
+/* Styles pour les images et texte dans la section Styles de Photographie */
+.photo-styles {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.style-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 900px; /* Limite la largeur totale pour s'adapter à la mise en page */
+}
+
+.style-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.style-item img {
+    width: 350px; /* Largeur fixe pour toutes les images */
+    height: 200px; /* Hauteur fixe pour toutes les images */
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Légère ombre pour la profondeur */
+}
+
+.style-text {
+    flex: 1;
+    max-width: 500px; /* Limite la largeur du texte */
+}
+
+.style-text h2 {
+    color: #FFC300;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.style-text p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #FFFFFF;
+}
+
+/* Alignement pour un effet centré similaire à l'image */
+.style-text, .style-item img {
+    align-self: center;
+}
+
+/* Ajustements Responsive */
+@media (max-width: 768px) {
+    .style-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .style-item img {
+        width: 100%;
+    }
+
+    .style-text {
+        max-width: 100%;
+    }
+}
+
+/* Styles pour la section "Les marques" */
+.car-brands {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.car-brands h2 {
+    font-size: 3rem;
+    color: #FFC300;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.brand-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.brand-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6); /* Effet de sombre */
+    transition: filter 0.3s;
+}
+
+.brand-item:hover img {
+    filter: brightness(0.9);
+}
+
+.brand-item:nth-child(6) .brand-label {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #FFC300;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.brand-label {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #FFC300;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Style général pour la page Design */
+.design-page {
+    background-color: #0D0D0D;
+    color: #FFFFFF;
+    padding: 40px 20px;
+    font-family: 'Loos-extrawide', sans-serif;
+}
+
+/* Titre principal de la page */
+.design-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.design-title h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.design-title .highlight {
+    color: #FFC300;
+}
+
+/* Section pour chaque catégorie */
+.design-category {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.design-category h2 {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.design-category .highlight {
+    color: #FFC300;
+}
+
+/* Galerie de designs */
+.design-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+.design-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.design-item img:hover {
+    transform: scale(1.05);
+}
+/* Styles de base pour la modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.modal-body {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.modal-image img {
+    max-width: 300px; /* Ajustez la largeur de l'image */
+    border-radius: 8px;
+}
+
+.modal-text {
+    color: #ffffff;
+    max-width: 50%;
+}
+
+.modal-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #FFC300; /* Couleur jaune */
+}
+
+.modal-description {
+    font-size: 16px;
+    color: #d3d3d3;
+}
+
+/* Désactiver le scroll en arrière-plan */
+body.no-scroll {
+    overflow: hidden;
+}
+
+.videos-page {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.videos-title h1 {
+    font-family: 'Loos-extraWide', sans-serif;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.highlight {
+    color: #FFC300;
+}
+
+.video-category {
+    margin-top: 50px;
+}
+
+.video-item {
+    margin-bottom: 40px; /* Ajustez cette valeur pour ajouter plus ou moins d'espace */
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px; /* Vous pouvez ajuster la largeur maximale */
+    margin: 0 auto;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+}
+
+.videos-item h2 {
+    font-family: 'Loos-extraWide', sans-serif;
+}
+
+
+.video-item h3 {
+    font-size: 2rem;
+    font-family: 'Loos-extraWide', sans-serif;
+}
+.video-item p {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: center; /* Centre le texte */
+}
+
+
+.short-videos-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.short-video-item {
+    width: calc(50% - 20px);
+    max-width: 300px;
+    position: relative;
+}
+
+.short-video-item video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.views-count {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Styles pour la carte du menu */
+.fullscreen-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+    z-index: 1000;
+}
+
+.fullscreen-menu.active {
+    display: block;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.menu-list li {
+    margin: 20px 0;
+}
+
+.menu-list a {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu-list a:hover {
+    color: #FFC300; /* Couleur de survol */
+}
+
+/* CSS pour désactiver le scroll */
+.no-scroll {
+    overflow: hidden;
+}
+
+
+/* Styles pour le bouton de menu burger */
+.burger-menu {
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 24px;
+    z-index: 1001;
+}
+
+.burger-menu span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Masquer l'icône burger lorsqu'elle est désactivée */
+.burger-menu.hidden {
+    display: none;
+}
+
+.related-products {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.related-products h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.related-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.related-item {
+    width: calc(25% - 20px);
+    text-align: center;
+}
+
+.related-item img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.related-item img:hover {
+    transform: scale(1.05);
+}
+
+.related-item p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+/* Style pour la page Design1 */
+.design1-page {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: 'Loos-extrawide', sans-serif; /* Police principale */
+}
+
+/* Section principale avec deux colonnes */
+.design1-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Une colonne pour le texte et une pour les images */
+    gap: 40px;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Colonne des images avec mise en page type grille */
+.design1-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grille réactive */
+    gap: 20px;
+    align-items: start;
+}
+
+.design1-images-container img {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Effet d'ombre */
+}
+
+.design1-images-container img:hover {
+    transform: scale(1.05); /* Zoom au survol */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.7); /* Ombre renforcée */
+}
+
+/* Colonne du texte avec alignement vertical */
+.design1-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Fond transparent subtil */
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Ombre */
+}
+
+.design1-description h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFC300; /* Couleur jaune */
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Texte en majuscules */
+    letter-spacing: 2px; /* Espacement des lettres */
+}
+
+.design1-description p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ddd; /* Texte gris clair */
+    text-align: justify;
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+    .design1-content {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    .design1-description {
+        order: 1; /* Placer la description en haut */
+    }
+}
+
+/* Modal pour afficher une image en grand */
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fond sombre */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex; /* Affiche la modal */
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+    background: transparent;
+    border: none;
+}
+
+
+/* Section des designs similaires */
+.design1-related-designs {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.design1-related-designs h2 {
+	font-family: 'Loos-extrawide', sans-serif;
+    font-size: 2rem;
+    color: #FFC300;
+    margin-bottom: 30px;
+}
+
+.design1-suggestions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.design1-item {
+    width: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.design1-item img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.design1-item img:hover {
+    transform: scale(1.05);
+}
+
+.design-main-page {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.design-title-section h1 {
+	font-family: 'Loos-extrawide', sans-serif;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.highlight {
+    color: #FFC300;
+}
+
+.design-category-section h2 {
+	font-family: 'Loos-extrawide', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    margin: 40px 0 20px;
+}
+
+.design-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.design-item {
+    width: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.design-item img {
+    width: 100%;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.design-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Style général pour la page galerie */
+.gallery-page {
+    background-color: #000; /* Fond noir */
+    color: #fff; /* Texte blanc */
+    padding: 40px 20px;
+    font-family: 'Acumin-pro', sans-serif;
+}
+
+/* Titre principal de la page */
+.gallery-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gallery-title h1 {
+    font-size: 3.5rem;
+    font-family: 'Loos-extrawide', sans-serif;
+    color: #fff;
+}
+
+.gallery-title .highlight {
+    color: #FFC300; /* Couleur jaune */
+}
+
+/* Section de la galerie */
+.gallery-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grille réactive */
+    gap: 20px; /* Espacement entre les items */
+    justify-content: center;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centre la grille */
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Coins arrondis pour les images */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Ombre légère */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste l'image sans la déformer */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: block;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Ombre renforcée au survol */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-title h1 {
+        font-size: 2.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Colonnes plus petites pour mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-title h1 {
+        font-size: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajustement pour très petits écrans */
+    }
+}
+
+/* Style général pour la page Contact */
+.contact-page {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Acumin-pro', sans-serif;
+    margin: 0; /* Supprime toutes les marges */
+    padding: 0; /* Ajuste les paddings */
+    text-align: center;
+    min-height: 100vh; /* Assure que la page prend toute la hauteur */
+    display: flex;
+    flex-direction: column;
+}
+
+/* En-tête de la page */
+.contact-header {
+    margin: 0; /* Évite le décalage en haut */
+    padding: 60px 20px 20px; /* Ajuste le padding en haut et en bas */
+}
+
+.contact-header h1 {
+    font-family: 'Loos-extrawide', sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1.1;
+    margin: 0; /* Supprime les marges par défaut */
+}
+
+.contact-header .highlight {
+    color: #FFC300; /* Jaune */
+}
+
+.contact-header .btn {
+    font-family: 'Loos-extrawide', sans-serif;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #FFC300;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.contact-header .btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Section Formulaire */
+.contact-form-section {
+    flex: 1; /* Prend l'espace restant */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Évite tout décalage */
+    padding: 40px;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 25px;
+    background-color: #111;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #666;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: none;
+}
+
+.contact-form .btn-submit {
+    background-color: #FFC300;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.contact-form .btn-submit:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+
+/* Ajustement global pour supprimer les décalages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .contact-header h1 {
+        font-size: 3rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px;
+    }
+
+    .contact-footer .social-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-form .btn-submit {
+        padding: 10px;
+    }
+}
+
+/* Styles généraux pour la page About */
+.about-me-page {
+    background-color: #000000; /* Fond sombre */
+    color: #FFFFFF; /* Texte blanc */
+    font-family: 'Acumin-pro', sans-serif;
+    padding: 40px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Conteneur principal */
+.about-me-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.about-me-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
+    max-width: 1200px;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Colonne texte */
+.about-me-text {
+    text-align: left;
+    animation: fade-in 1.2s ease-in-out;
+}
+
+.about-me-title {
+    font-family: 'Loos-extrawide', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+
+.about-me-highlight {
+    color: #FFC300; /* Couleur jaune */
+}
+
+.about-me-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #DDD; /* Texte gris clair */
+    max-width: 500px;
+}
+
+/* Colonne image */
+.about-me-image {
+    display: flex;
+    justify-content: center;
+    animation: slide-in-right 1.2s ease-in-out;
+}
+
+.about-me-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-me-content {
+        grid-template-columns: 1fr; /* Une seule colonne */
+        text-align: center;
+    }
+
+    .about-me-image {
+        margin-top: 20px;
+    }
+
+    .about-me-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-me-title {
+        font-size: 2rem;
+    }
+
+    .about-me-text p {
+        font-size: 1rem;
+    }
+}
